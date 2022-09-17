@@ -1,0 +1,93 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  padding: 0 5%;
+  height: 10vh;
+}
+.header__addEventBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: inherit;
+  border: none;
+}
+.header__addEventBtn img {
+  width: 35px;
+  cursor: pointer;
+}
+.header__rightSideWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__rightSideWrapper-prevArr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: inherit;
+  margin-top: 2px;
+}
+.header__rightSideWrapper-prevArr img {
+  width: 7px;
+  cursor: pointer;
+}
+.header__rightSideWrapper-month {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+  width: 150px;
+}
+.header__rightSideWrapper-nextArr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: inherit;
+  margin-top: 2px;
+  margin-right: 15px;
+}
+.header__rightSideWrapper-nextArr img {
+  width: 7px;
+  cursor: pointer;
+}
+.header .datepicker-toggle {
+  display: inline-block;
+  position: relative;
+  width: 18px;
+  height: 19px;
+}
+.header .datepicker-toggle-button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/1067/1067374.png");
+}
+.header .datepicker-input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.header .datepicker-input::-webkit-calendar-picker-indicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=styles.css.map */

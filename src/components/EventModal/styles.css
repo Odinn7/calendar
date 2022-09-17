@@ -1,0 +1,112 @@
+.eventCard {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  translate: 50%;
+  width: 330px;
+  height: 450px;
+  padding: 1% 2%;
+  background: #457b9d;
+  border-radius: 8px;
+}
+.eventCard__eventHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.eventCard__eventHeader-title {
+  font-weight: inherit;
+}
+.eventCard__eventHeader__icons-deleteButton {
+  cursor: pointer;
+  background: inherit;
+  margin-right: 15px;
+  border: none;
+  color: #FFFFFF;
+  padding: 6px 10px;
+}
+.eventCard__eventHeader__icons-deleteButton:hover {
+  background: red;
+  transition: 1s;
+  border-radius: 5px;
+}
+.eventCard__eventHeader__icons-closeIcon {
+  width: 12px;
+  cursor: pointer;
+}
+.eventCard__eventBody {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  width: 95%;
+}
+.eventCard__eventBody__inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+  height: 18vh;
+}
+.eventCard__eventBody__inputs-input {
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  height: 35px;
+  margin-bottom: 5px;
+}
+.eventCard__eventBody__inputs-description {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+}
+.eventCard__eventBody__timeDate {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 100px;
+}
+.eventCard__eventBody__timeDate-date {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+}
+.eventCard__eventBody__timeDate-time {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+}
+.eventCard__buttonWrapper {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  margin-top: 25px;
+}
+.eventCard__buttonWrapper button {
+  cursor: pointer;
+  background: inherit;
+  margin-right: 15px;
+  border: 0.3px solid chocolate;
+  color: #FFFFFF;
+  padding: 10px 25px;
+  border-radius: 5px;
+}
+.eventCard__buttonWrapper button:hover {
+  background: lightgreen;
+  transition: 1s;
+  border: 0.5px solid lightgreen;
+}
+.eventCard__buttonWrapper button:disabled {
+  transition: 1s;
+  background: #696868;
+  border: 0.5px solid #696868;
+}
+.eventCard__buttonWrapper button:enabled {
+  transition: 1s;
+}
+
+/*# sourceMappingURL=styles.css.map */
