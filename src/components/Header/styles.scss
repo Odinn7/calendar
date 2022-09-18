@@ -14,8 +14,9 @@
     border: none;
 
     img {
-      width: 35px;
+      width: 25px;
       cursor: pointer;
+      border-radius: 50px;
     }
   }
 
@@ -44,6 +45,7 @@
       align-items: center;
       height: inherit;
       width: 150px;
+      color: #000000;
     }
 
     &-nextArr {
@@ -73,9 +75,9 @@
     position: absolute;
     left: 0;
     top: 0;
-    width: 25px;
-    height: 25px;
-    background-size: cover;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
     background-image: url('https://cdn-icons-png.flaticon.com/512/1067/1067374.png');
   }
 

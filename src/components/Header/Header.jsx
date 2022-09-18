@@ -37,7 +37,7 @@ export const Header = () => {
             <button className='header__addEventBtn'>
                 <img
                     onClick={() => setShowEventModal(true)}
-                    src='https://www.shareicon.net/data/512x512/2016/08/18/809385_add_512x512.png'
+                    src='https://cdn-icons-png.flaticon.com/512/1004/1004733.png'
                     alt='addEvent'
                 />
             </button>

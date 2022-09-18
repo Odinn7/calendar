@@ -39,7 +39,7 @@ export const Day = ({ day }) => {
                     {day.format('dddd').toUpperCase()}
                 </p>
                 <p>
-                    {day.format('DD')}
+                    {day.format('D')}
                 </p>
             </div>
             <div
@@ -51,13 +51,13 @@ export const Day = ({ day }) => {
             >
                 {
                     dayEvent?.map(
-                        (item, index) =>
+                        (event, index) =>
                             <div
                                 className='eventsWrapper-event'
-                                onClick={() => setSelectedEvent(item)}
+                                onClick={() => setSelectedEvent(event)}
                                 key={index}
                             >
-                                {item.title}
+                                {event.title}
                             </div>)
                 }
             </div>
