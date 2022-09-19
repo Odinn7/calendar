@@ -6,17 +6,10 @@ import { Day } from "../Day/Day";
 import './styles.css'
 
 
-export const Month = () => {
-    const [currentMonth, setCurrentMonth] = useState(new Date());
-    const { viewDate } = useContext(GlobalContext);
-
-    useEffect(() => {
-        setCurrentMonth(getMonth(viewDate));
-    }, [viewDate]);
-
+export const Month = ({month}) => {
     return (
         <div className='monthWrapper'>
-            {currentMonth?.map((row, index) => {
+            {month.map((row, index) => {
                 return <Fragment key={index}>
                     {row.map((day, i) => {
                         return <Day day={day} key={i}/>
