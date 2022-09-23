@@ -1,7 +1,9 @@
-import React, { useContext, useState } from 'react';
-import { GlobalContext } from "../../Context/GlobalContext";
+import React, { useContext, useEffect, useState } from 'react'
+import { GlobalContext } from '../../Context/GlobalContext'
 
 import './styles.css'
+import { useDispatch } from 'react-redux'
+import { addingEvent } from '../../redux/actionCreator'
 
 
 export const EventCard = () => {
@@ -11,9 +13,9 @@ export const EventCard = () => {
         selectedEvent,
         selectedDay,
         setSelectedEvent,
-        setSelectedDay
-    } = useContext(GlobalContext);
-    
+        setSelectedDay,
+    } = useContext(GlobalContext)
+
     const [title, setTitle] = useState(selectedEvent ? selectedEvent.title : '')
     const [description, setDescription] = useState(
         selectedEvent ? selectedEvent.description : '')
@@ -21,42 +23,48 @@ export const EventCard = () => {
         selectedEvent ? selectedEvent.day : '')
     const [chosenTime, setChosenTime] = useState(
         selectedEvent ? selectedEvent.time : '')
-    
+
+    const dispatch = useDispatch()
+
     const dispatchArrayHandler = (event) => {
-        event.preventDefault();
+        event.preventDefault()
         const calendarEvent = {
             title,
             description,
             id: selectedEvent ? selectedEvent.id : Date.now(),
             day: chosenDate,
-            time: chosenTime
+            time: chosenTime,
         }
         if (selectedEvent) {
-            dispatchCallEvents({ type: "UPDATE", payload: calendarEvent });
+            dispatchCallEvents({ type: 'UPDATE', payload: calendarEvent })
         } else {
-            dispatchCallEvents({ type: "PUSH", payload: calendarEvent });
+            dispatchCallEvents({ type: 'PUSH', payload: calendarEvent })
         }
         setShowEventModal(false)
-    };
-    
+
+        dispatch(addingEvent(calendarEvent))
+
+    }
+
     const closeModalHandler = () => {
         setShowEventModal(false)
         setSelectedEvent(null)
         setSelectedDay(null)
-    };
-    
+    }
+
     const deleteEventHandler = () => {
-        dispatchCallEvents({ type: "DELETE", payload: selectedEvent })
+        dispatchCallEvents({ type: 'DELETE', payload: selectedEvent })
         setShowEventModal(false)
         setSelectedEvent(null)
         setSelectedDay(null)
     }
-    
+
+
     return (
         <div className='eventCard'>
             <div className='eventCard__eventHeader'>
                 <h2 className='eventCard__eventHeader-title'>
-                    { selectedDay ? "Edit event" : "Add new event" }
+                    {selectedDay ? 'Edit event' : 'Add new event'}
                 </h2>
                 <div className='eventCard__eventHeader__icons'>
                     {
@@ -117,5 +125,5 @@ export const EventCard = () => {
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}

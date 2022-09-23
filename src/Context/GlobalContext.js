@@ -1,4 +1,4 @@
-import React, { createContext } from 'react';
+import { createContext } from 'react';
 
 
 export const GlobalContext = createContext({
@@ -6,10 +6,10 @@ export const GlobalContext = createContext({
     setViewDate: () => {},
     showEventModal: false,
     setShowEventModal: () => {},
-    dispatchCallEvents: ({type, payload}) => {},
+    dispatchCallEvents: () => {},
     selectedDay: null,
-    setSelectedDay: (day) => {},
+    setSelectedDay: () => {},
     savedEvents: [],
     selectedEvent: null,
-    setSelectedEvent: (event) => {}
+    setSelectedEvent: () => {},
 })

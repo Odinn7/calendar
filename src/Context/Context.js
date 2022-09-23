@@ -8,7 +8,8 @@ const savedEventsReducer = (state, { type, payload }) => {
             return [...state, payload];
         case "UPDATE":
             return state.map(
-                event => event.id === payload.id ? payload : event);
+                event => event.id === payload.id ? payload : event
+            );
         case "DELETE":
             return state.filter(event => event.id !== payload.id);
         default:
@@ -47,7 +48,7 @@ export const Context = (props) => {
             setSelectedDay,
             savedEvents,
             selectedEvent,
-            setSelectedEvent
+            setSelectedEvent,
         }}>
             {props.children}
         </GlobalContext.Provider>

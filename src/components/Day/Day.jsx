@@ -1,39 +1,41 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { GlobalContext } from "../../Context/GlobalContext";
-import { EventCard } from "../EventModal/EventModal";
-import dayjs from "dayjs";
+import React, { useContext, useEffect, useState } from 'react'
+import { GlobalContext } from '../../Context/GlobalContext'
+import { EventCard } from '../EventModal/EventModal'
+import dayjs from 'dayjs'
 
 import './styles.css'
 
 
 export const Day = ({ day }) => {
+    const [dayEvent, setDayEvent] = useState([])
+
     const {
         showEventModal,
         savedEvents,
         setSelectedDay,
         setShowEventModal,
         setSelectedEvent,
-    } = useContext(GlobalContext);
-    const [dayEvent, setDayEvent] = useState([]);
-    
+    } = useContext(GlobalContext)
+
+
     useEffect(() => {
         const event = savedEvents.filter(
-            newEvent =>
-                dayjs(newEvent.day).format('DD-MM-YY')
+            newEvent => dayjs(newEvent.day).format('DD-MM-YY')
                 ===
-                day.format('DD-MM-YY'));
+                day.format('DD-MM-YY'))
         setDayEvent(event)
-    }, [savedEvents, day]);
-    
+
+    }, [savedEvents, day])
+
     const getCurrDay = () => {
         return day.format('DD-MM-YY') === dayjs().format('DD-MM-YY') ?
-               'currentDay' :
-               'day'
-    };
-    
+            'currentDay' :
+            'day'
+    }
+
     return (
         <div className={`${getCurrDay()}`}>
-            {showEventModal && <EventCard day={day}/>}
+            {showEventModal && <EventCard day={day} />}
             <div className='dayCardHeader'>
                 <p>
                     {day.format('dddd').toUpperCase()}
@@ -62,5 +64,5 @@ export const Day = ({ day }) => {
                 }
             </div>
         </div>
-    );
-};
+    )
+}
