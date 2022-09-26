@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useState } from 'react';
+import React, { useCallback, useEffect, useReducer, useState } from 'react';
 import { GlobalContext } from "./GlobalContext";
 
 
@@ -23,7 +23,7 @@ const initEvent = () => {
 }
 
 export const Context = (props) => {
-    const [viewDate, setViewDate] = useState(new Date());
+    const [viewDate, __setViewDate] = useState(new Date());
     const [showEventModal, setShowEventModal] = useState(false);
     const [selectedDay, setSelectedDay] = useState(null)
     const [selectedEvent, setSelectedEvent] = useState(null)
@@ -33,6 +33,19 @@ export const Context = (props) => {
         [],
         initEvent
     )
+    
+    const setViewDate = useCallback((newViewDate) => {
+        localStorage.setItem("recentViewDate", newViewDate);
+        __setViewDate(newViewDate);
+    }, []);
+    
+    useEffect(() => {
+       const existingDateLocal = localStorage.getItem("recentViewDate");
+       const existingDate = existingDateLocal == null ? new Date() : new Date(existingDateLocal);
+        __setViewDate(existingDate);
+    }, []);
+    
+    
     
     useEffect(() => {
         localStorage.setItem("savedEvent", JSON.stringify(savedEvents))
